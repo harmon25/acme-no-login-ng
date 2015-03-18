@@ -53,6 +53,10 @@ app.get('/', function(req, res) {
 });
 
 app.post('/', function(req, res) {
+	var testStr = req.body.user + req.body.pass;
+	if (testStr.indexOf("$") > -1) {
+		return res.status(500).send({message: "Nice try buddy..."});
+	} else {
 	User.findOne({user: req.body.user, pass: req.body.pass}, function (err, user) {
 		if (err) {
 			return res.status(500).send({message: err.message});
@@ -68,6 +72,7 @@ app.post('/', function(req, res) {
 
 		return res.status(200).send({message: 'Welcome back ' + user.name + '!!!'});
 	});
+	}
 });
 
 // ---
