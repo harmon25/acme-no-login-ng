@@ -56,7 +56,7 @@ app.post('/', function(req, res) {
 	var userName = req.body.user;
 	var password = req.body.pass;
 	if (typeof userName == 'object' || typeof password =='object'){
-		var msg = "nice try hackers...get outa town"
+		var msg = "nice try you 1337 h4ckz0r...get outa town"
 		return res.status(500).send({message: msg});
 	} else {
 	User.findOne({user: userName, pass: password}, function (err, user) {
