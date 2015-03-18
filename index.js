@@ -53,11 +53,13 @@ app.get('/', function(req, res) {
 });
 
 app.post('/', function(req, res) {
-	var testStr = req.body.user + req.body.pass;
-	if (testStr.indexOf("$") > -1) {
-		return res.status(500).send({message: "Nice try buddy..."});
+	var userName = req.body.user;
+	var password = req.body.pass;
+	if (typeof userName == 'object' || typeof password =='object'){
+		var msg = "nice try hackers...get outa town"
+		return res.status(500).send({message: msg});
 	} else {
-	User.findOne({user: req.body.user, pass: req.body.pass}, function (err, user) {
+	User.findOne({user: userName, pass: password}, function (err, user) {
 		if (err) {
 			return res.status(500).send({message: err.message});
 		}
@@ -72,7 +74,7 @@ app.post('/', function(req, res) {
 
 		return res.status(200).send({message: 'Welcome back ' + user.name + '!!!'});
 	});
-	}
+}
 });
 
 // ---
