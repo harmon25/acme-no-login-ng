@@ -19,7 +19,7 @@ docker-run:
 # ---
 
 mongod-run:
-	mkdir -p /data/mongodb && mongod --fork --dbpath /data/mongodb --logpath /var/log/mongod.log
+	mkdir -p /data/mongodb && mongod --smallfiles --fork --dbpath /data/mongodb --logpath /var/log/mongod.log
 	
 node-run:
 	nodejs /app/index.js
