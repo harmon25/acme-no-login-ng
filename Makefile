@@ -1,4 +1,4 @@
-image = acme-no-login-ng
+image = acme-no-login-ng-fixed
 
 # ---
 # ---
