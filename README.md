@@ -14,10 +14,10 @@
 	|_|   |_|\___/   |_______)___/ \___ |_|_| |_|
 	                              (_____|        
 	
-	by Websecurify (pdp)
+	Originaly by Websecurify (pdp)
 	
-FIX - This applies string checking on user input on the endpoint.
-If a $ is present in the query - return an error.
+FIX - This applies type checking on user input.
+If the username or password is an object, it must be an injection attempt as they should be strings...
 
 # System Requirements
 
@@ -35,4 +35,4 @@ Run the following command:
 
 	make docker-run
 
-The application will be available on localhost:49090.
+The application will be available on localhost:49091.
