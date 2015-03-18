@@ -16,8 +16,8 @@
 	
 	by Websecurify (pdp)
 	
-
-The following application, written on top of MongoDB, NodeJS and AngularJS, demonstrates a simple but not too obvious vulnerability in the this particular technology stack that can be used to successfully bypass the login prompt.
+FIX - This applies string checking on user input on the endpoint.
+If a $ is present in the query - return an error.
 
 # System Requirements
 
